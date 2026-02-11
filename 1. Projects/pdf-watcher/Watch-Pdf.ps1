@@ -99,14 +99,9 @@ function Invoke-Convert {
     Write-Log "  [1/2] MinerU 변환 시작..."
     $sw = [System.Diagnostics.Stopwatch]::StartNew()
 
-    $mnrLog = Join-Path $mnrDir "_mineru.log"
-
     $p = Start-Process -FilePath "mineru" `
         -ArgumentList "-p `"$FilePath`" -o `"$mnrDir`" -m auto" `
-        -NoNewWindow -PassThru `
-        -RedirectStandardOutput $mnrLog `
-        -RedirectStandardError (Join-Path $mnrDir "_mineru_err.log")
-    $p.WaitForExit()
+        -NoNewWindow -PassThru -Wait
     $sw.Stop()
 
     $mdFiles = @(Get-ChildItem $mnrDir -Recurse -Filter "*.md" -EA SilentlyContinue)
