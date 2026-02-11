@@ -38,7 +38,25 @@
       "Bash(cmd /c \"explorer \"\"C:\\\\Users\\\\user\\\\OneDrive - 강도원\\\\문서\\\\Obsidian_KDW\\\\KDW\\\\1. Projects\"\"\")",
       "Bash(git -C \"C:\\\\Users\\\\user\\\\OneDrive - 강도원\\\\문서\\\\Obsidian_KDW\\\\KDW\" status)",
       "Bash(git -C \"C:\\\\Users\\\\user\\\\OneDrive - 강도원\\\\문서\\\\Obsidian_KDW\\\\KDW\" diff)",
-      "Bash(git -C \"C:\\\\Users\\\\user\\\\OneDrive - 강도원\\\\문서\\\\Obsidian_KDW\\\\KDW\" add \"1. Projects/pdf-watcher/\" summary.md .claude/settings.local.json)"
+      "Bash(git -C \"C:\\\\Users\\\\user\\\\OneDrive - 강도원\\\\문서\\\\Obsidian_KDW\\\\KDW\" add \"1. Projects/pdf-watcher/\" summary.md .claude/settings.local.json)",
+      "Bash(git -C \"C:\\\\Users\\\\user\\\\OneDrive - 강도원\\\\문서\\\\Obsidian_KDW\\\\KDW\" commit -m \"$\\(cat <<''EOF''\nPDF 감시 프로젝트 및 요약 문서 추가\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git -C \"C:\\\\Users\\\\user\\\\OneDrive - 강도원\\\\문서\\\\Obsidian_KDW\\\\KDW\" push)",
+      "Bash(git -C \"C:\\\\Users\\\\user\\\\OneDrive - 강도원\\\\문서\\\\Obsidian_KDW\\\\KDW\" add .gitignore)",
+      "Bash(git -C \"C:\\\\Users\\\\user\\\\OneDrive - 강도원\\\\문서\\\\Obsidian_KDW\\\\KDW\" commit -m \"$\\(cat <<''EOF''\n.gitignore 추가: Windows 아티팩트 파일\\(_ul, nul\\) 제외\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git -C \"C:\\\\Users\\\\user\\\\OneDrive - 강도원\\\\문서\\\\Obsidian_KDW\\\\KDW\" add \"1. Projects/pdf-watcher/\")",
+      "Bash(git -C \"C:\\\\Users\\\\user\\\\OneDrive - 강도원\\\\문서\\\\Obsidian_KDW\\\\KDW\" commit -m \"$\\(cat <<''EOF''\npdf-watcher: Marker 제거, MinerU 단독 변환으로 변경\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(cmd /c \"schtasks /create /tn \"PdfWatcher\" /tr \"powershell.exe -ExecutionPolicy Bypass -WindowStyle Hidden -File \"\"C:UsersuserOneDrive - 강도원문서Obsidian_KDWKDW1. Projectspdf-watcherWatch-Pdf.ps1\"\"\" /sc onlogon /rl highest /f\")",
+      "Bash(git -C \"C:\\\\Users\\\\user\\\\OneDrive - 강도원\\\\문서\\\\Obsidian_KDW\\\\KDW\" add \"1. Projects/pdf-watcher/Watch-Pdf.ps1\" \"1. Projects/pdf-watcher/_register-startup.ps1\" \"1. Projects/pdf-watcher/logs/watcher.log\" \"1. Projects/pdf-watcher/output/GT2023-102554.md\" \"1. Projects/pdf-watcher/output/GT2023-102554_images/\")",
+      "Bash(git -C \"C:\\\\Users\\\\user\\\\OneDrive - 강도원\\\\문서\\\\Obsidian_KDW\\\\KDW\" commit -m \"$\\(cat <<''EOF''\npdf-watcher: archive 이동 기능 및 시작 프로그램 자동 등록 추가\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(cmd /c \"attrib -P +U \"\"C:\\\\Users\\\\user\\\\OneDrive - 강도원\\\\문서\\\\Obsidian_KDW\\\\KDW\\\\1. Projects\\\\pdf-watcher\\\\input\"\" 2>nul & attrib \"\"C:\\\\Users\\\\user\\\\OneDrive - 강도원\\\\문서\\\\Obsidian_KDW\\\\KDW\\\\1. Projects\\\\pdf-watcher\\\\input\"\"\")",
+      "Bash(cmd /c \"explorer \"\"C:\\\\Users\\\\user\\\\OneDrive - 강도원\\\\문서\\\\Obsidian_KDW\\\\KDW\\\\1. Projects\\\\pdf-watcher\\\\input\"\"\")",
+      "Bash(cmd /c:*)",
+      "Bash(git -C \"C:\\\\Users\\\\user\\\\OneDrive - 강도원\\\\문서\\\\Obsidian_KDW\\\\KDW\" add \"1. Projects/pdf-watcher/Watch-Pdf.ps1\" \"1. Projects/pdf-watcher/logs/watcher.log\" \"1. Projects/pdf-watcher/output/GT2023-101283.md\" \"1. Projects/pdf-watcher/output/GT2023-101283_images/\" \"1. Projects/pdf-watcher/output/GT2023-101797.md\" \"1. Projects/pdf-watcher/archive/\")",
+      "Bash(git -C \"C:\\\\Users\\\\user\\\\OneDrive - 강도원\\\\문서\\\\Obsidian_KDW\\\\KDW\" commit -m \"$\\(cat <<''EOF''\npdf-watcher: 중복 변환 방지 및 원본 파일명 유지, GT2023-101283 변환 결과 추가\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git -C \"C:\\\\Users\\\\user\\\\OneDrive - 강도원\\\\문서\\\\Obsidian_KDW\\\\KDW\" commit -m \"$\\(cat <<''EOF''\npdf-watcher: 실시간 진행률 표시, archive 파일명 원본 유지, EnergyandAI 변환 결과 추가\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git -C \"C:\\\\Users\\\\user\\\\OneDrive - 강도원\\\\문서\\\\Obsidian_KDW\\\\KDW\" add \"1. Projects/국내_재생에너지_간헐성_대응_가스터빈_발전_개발_보고서.md\")",
+      "Bash(git -C \"C:\\\\Users\\\\user\\\\OneDrive - 강도원\\\\문서\\\\Obsidian_KDW\\\\KDW\" commit -m \"$\\(cat <<''EOF''\n가스터빈 보고서: IEA Energy and AI\\(2025\\) 기반 AI·데이터센터 관련 내용 업데이트\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git -C \"C:\\\\Users\\\\user\\\\OneDrive - 강도원\\\\문서\\\\Obsidian_KDW\\\\KDW\" commit -m \"$\\(cat <<''EOF''\n가스터빈 보고서: 목차 추가\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\")"
     ]
   }
 }
