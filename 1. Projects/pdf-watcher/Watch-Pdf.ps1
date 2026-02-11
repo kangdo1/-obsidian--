@@ -80,6 +80,15 @@ function Invoke-Convert {
     Write-Log "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
     Write-Log "NEW: $fileName"
 
+    # ── 중복 검사: archive에 동일 파일 존재 여부 ──────────
+    $archivePath = Join-Path $ArchiveDir $fileName
+    if (Test-Path $archivePath) {
+        Write-Log "  [SKIP] 이미 변환된 파일입니다: archive/$fileName"
+        Remove-Item -Path $FilePath -Force -EA SilentlyContinue
+        Write-Log "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+        return
+    }
+
     $outputFile = Join-Path $OutputDir "${baseName}.md"
 
     $tmp = [System.IO.Path]::GetTempPath()
@@ -134,9 +143,8 @@ function Invoke-Convert {
 
     # ── input 정리: archive로 이동 ─────────────────────────
     try {
-        $archiveName = "${baseName}_${ts}.pdf"
-        Move-Item -Path $FilePath -Destination (Join-Path $ArchiveDir $archiveName) -Force
-        Write-Log "  완료 (archive로 이동: $archiveName)"
+        Move-Item -Path $FilePath -Destination (Join-Path $ArchiveDir $fileName) -Force
+        Write-Log "  완료 (archive로 이동: $fileName)"
     }
     catch { Write-Log "  [ERROR] archive 이동 실패: $($_.Exception.Message)" }
     Write-Log "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
