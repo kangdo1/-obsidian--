@@ -10,7 +10,7 @@
     │  1. MinerU  변환 (이미지 추출 + 문서 구조)          │
     │       ↓                                             │
     │  2. output/최종.md + output/최종_images/             │
-    │  3. 원본 PDF 삭제 (input/ 비움)                     │
+    │  3. 원본 PDF → archive/ 이동                       │
     └─────────────────────────────────────────────────────┘
 
     출력 구조:
@@ -27,13 +27,14 @@ $OutputEncoding = [System.Text.Encoding]::UTF8
 $null = & chcp 65001 2>$null
 
 # ── 경로 ──────────────────────────────────────────────────
-$BaseDir   = Split-Path -Parent $MyInvocation.MyCommand.Path
-$InputDir  = Join-Path $BaseDir "input"
-$OutputDir = Join-Path $BaseDir "output"
-$LogDir    = Join-Path $BaseDir "logs"
-$LogFile   = Join-Path $LogDir  "watcher.log"
+$BaseDir    = Split-Path -Parent $MyInvocation.MyCommand.Path
+$InputDir   = Join-Path $BaseDir "input"
+$OutputDir  = Join-Path $BaseDir "output"
+$ArchiveDir = Join-Path $BaseDir "archive"
+$LogDir     = Join-Path $BaseDir "logs"
+$LogFile    = Join-Path $LogDir  "watcher.log"
 
-foreach ($dir in @($InputDir, $OutputDir, $LogDir)) {
+foreach ($dir in @($InputDir, $OutputDir, $ArchiveDir, $LogDir)) {
     if (-not (Test-Path $dir)) {
         New-Item -Path $dir -ItemType Directory -Force | Out-Null
     }
@@ -131,12 +132,13 @@ function Invoke-Convert {
 
     Remove-Item $mnrDir -Recurse -Force -EA SilentlyContinue
 
-    # ── input 정리 ──────────────────────────────────────────
+    # ── input 정리: archive로 이동 ─────────────────────────
     try {
-        Remove-Item -Path $FilePath -Force
-        Write-Log "  완료 (원본 삭제)"
+        $archiveName = "${baseName}_${ts}.pdf"
+        Move-Item -Path $FilePath -Destination (Join-Path $ArchiveDir $archiveName) -Force
+        Write-Log "  완료 (archive로 이동: $archiveName)"
     }
-    catch { Write-Log "  [ERROR] 원본 삭제 실패: $($_.Exception.Message)" }
+    catch { Write-Log "  [ERROR] archive 이동 실패: $($_.Exception.Message)" }
     Write-Log "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 }
 
