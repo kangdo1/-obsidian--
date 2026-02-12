@@ -56,7 +56,14 @@
       "Bash(git -C \"C:\\\\Users\\\\user\\\\OneDrive - 강도원\\\\문서\\\\Obsidian_KDW\\\\KDW\" commit -m \"$\\(cat <<''EOF''\npdf-watcher: 실시간 진행률 표시, archive 파일명 원본 유지, EnergyandAI 변환 결과 추가\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\")",
       "Bash(git -C \"C:\\\\Users\\\\user\\\\OneDrive - 강도원\\\\문서\\\\Obsidian_KDW\\\\KDW\" add \"1. Projects/국내_재생에너지_간헐성_대응_가스터빈_발전_개발_보고서.md\")",
       "Bash(git -C \"C:\\\\Users\\\\user\\\\OneDrive - 강도원\\\\문서\\\\Obsidian_KDW\\\\KDW\" commit -m \"$\\(cat <<''EOF''\n가스터빈 보고서: IEA Energy and AI\\(2025\\) 기반 AI·데이터센터 관련 내용 업데이트\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\")",
-      "Bash(git -C \"C:\\\\Users\\\\user\\\\OneDrive - 강도원\\\\문서\\\\Obsidian_KDW\\\\KDW\" commit -m \"$\\(cat <<''EOF''\n가스터빈 보고서: 목차 추가\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\")"
+      "Bash(git -C \"C:\\\\Users\\\\user\\\\OneDrive - 강도원\\\\문서\\\\Obsidian_KDW\\\\KDW\" commit -m \"$\\(cat <<''EOF''\n가스터빈 보고서: 목차 추가\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "WebFetch(domain:help.ebsilon.com)",
+      "WebFetch(domain:www.scribd.com)",
+      "Bash(python test_ebsopen2.py:*)",
+      "Bash(python:*)",
+      "Bash(ping:*)",
+      "Bash(start \"\" \"C:\\\\Users\\\\user\\\\OneDrive - 강도원\\\\문서\\\\Obsidian_KDW\\\\KDW\\\\1. Projects\\\\ebsilon-test\\\\H2O2cycle_1400C_reference.ebs\")",
+      "Bash(git status:*)"
     ]
   }
 }
